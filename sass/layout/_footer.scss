@@ -1,0 +1,124 @@
+.footer {
+  background-color: #344559;
+  @include breakpoint(phone) {
+    margin: 0 0 -50px;
+  }
+  .flex-row {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+.footer-top {
+  padding: 7rem 0;
+  background-color: #fff;
+  .item {
+    width: 23%;
+  }
+  @include breakpoint(500px) {
+    padding: 4rem 0;
+    .item {
+      width: 47%;
+    }
+  }
+}
+.footer-middle {
+  padding: 5rem 0 3rem;
+  color: $dark-grey;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  a:hover {
+    color: $white;
+  }
+  .logo {
+    background-color: $red;
+    @include footer-margin;
+  }
+  .h3 {
+    color: R$white;
+    font-size: 1.8rem;
+    @include footer-margin;
+  }
+  .text {
+    color: inherit;
+    margin: 0 0 1.5rem;
+  }
+  .p-text {
+    line-height: 2rem;
+    &:nth-child(2) {
+      margin: 0 0 5rem;
+    }
+  }
+  .item {
+    width: 23%;
+    margin: 0 0 3rem;
+    @include breakpoint(800px) {
+      width: 45%;
+    }
+    @include breakpoint(500px) {
+      width: 100%;
+    }
+  }
+  .input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $dark-grey;
+    padding: .5rem;
+    margin: 0 0 1rem;
+    color: $white;
+    &::placeholder {
+      color: $dark-grey;
+    }
+  }
+  .newsletter {
+    background-color: $white;
+    color: $black;
+  }
+  .textarea {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $dark-grey;
+    padding: .5rem;
+    margin: 0 0 1.5rem;
+    height: 7rem;
+    color: $white;
+    resize: none;
+    &::placeholder {
+      color: $dark-grey;
+    }
+  }
+}
+.footer-bottom {
+  padding: 3rem 0 2.5rem;
+  font-size: 1.2rem;
+  background-color: #4d6685;
+  color: #8faaca;
+  .text {
+    color: inherit;
+    margin: 0 0 .5rem;
+    &:hover {
+      color: $white;
+    }
+    &:not(:nth-child(1)) {
+      margin: 0 0 0 .5rem;
+    }
+  }
+  .left {
+    @include breakpoint(phone) {
+      margin: 0 2rem 1rem 0;
+    }
+  }
+}
+.send-btn {
+  padding: .5rem;
+  color: $white;
+  background-color: #63a9ff;
+  border: 0;
+  font-weight: bold;
+  display: inline-block;
+  transition: .5s;
+  margin: 0 0 1rem;
+  &:hover {
+    color: #63a9ff;
+    background-color: $white;
+  }
+}

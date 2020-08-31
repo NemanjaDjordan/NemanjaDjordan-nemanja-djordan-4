@@ -1,0 +1,303 @@
+.header {
+  position: relative;
+  z-index: 150;
+  .bottom {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .left {
+    align-items: center;
+  }
+  .logo {
+    width: 4rem;
+    margin: 0 1.5rem 0 0;
+  }
+  .st0 {
+    fill: none;
+    stroke: #9caebc;
+  }
+  .item:not(:last-child) {
+    margin: 0 1rem 0 0;
+  }
+}
+.header-top-wrapper {
+  background-color: #2f3f58;
+  width: 100%;
+  color: #58697d;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  .top {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .icon {
+    background-color: #faf;
+  }
+  .item:hover {
+    color: $white;
+    transition: .2s;
+  }
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+.header-bottom-wrapper {
+  padding: 0 3rem;
+  background-color: #fff;
+  position: fixed;
+  top: 3.2rem;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  height: 5rem;
+  color: #999ca1;
+  transition: .3s;
+  @include shadow;
+  @include breakpoint(tablet) {
+    display: none;
+  }
+  .item {
+    padding: 1.75rem .5rem;
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 0;
+      content: '';
+      height: 0;
+      width: .2rem;
+      margin: 0 0 0 .5rem;
+      display: inline-block;
+      background-color: #999ca1;
+      transition: .2s;
+    }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      height: 0;
+      margin: 5rem 0 0;
+      width: .2rem;
+      display: inline-block;
+      background-color: #999ca1;
+      transition: .2s;
+    }
+  }
+  .item:hover {
+    cursor: pointer;
+    &::after {
+      height: 100%;
+    }
+    &::before {
+      height: 100%;
+      margin: 0;
+    }
+  }
+}
+.nav-burger {
+  display: none;
+  position: fixed;
+  width: 100%;
+  @include breakpoint(tablet) {
+    display: block;
+  }
+  .navigation-button {
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    right: 3rem;
+    top: 3rem;
+    z-index: 100;
+    transition: .5s;
+    cursor: pointer;
+    &::after,
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      border: 0 solid $black;
+      transition: .5s;
+      }
+    &::after {
+      top: -1px;
+      left: -1px;
+      border-top: .2rem solid transparent;
+      border-left: .2rem solid transparent;
+    }
+    &::before {
+      bottom: -1px;
+      right: -1px;
+      border-bottom: .2rem solid transparent;
+      border-right: .2rem solid transparent;
+    }
+    &:hover {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      &::after {
+        border-top: .2rem solid $black;
+        border-left: .2rem solid $black;
+      }
+      &::before {
+        border-bottom: .2rem solid $black;
+        border-right: .2rem solid $black;
+      }
+      &::before,
+      &::after {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    @include breakpoint(450px) {
+      right: 1.5rem;
+      top: 1.5rem;
+    }
+  }
+  .navigation-checkbox {
+    display: none;
+  }
+  .navigation-checkbox:checked ~ .navigation-button {
+    &:hover {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      &::after {
+        border-top: .2rem solid $white;
+        border-left: .2rem solid $white;
+      }
+      &::before {
+        border-bottom: .2rem solid $white;
+        border-right: .2rem solid $white;
+      }
+      &::before,
+      &::after {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .navigation-icon {
+      border-top: .2rem solid transparent;
+      &::after {
+        top: -.2rem;
+        transform: rotate(45deg);
+        border: .1rem solid $white;
+      }
+      &::before {
+        top: -.1rem;
+        transform: rotate(-45deg);
+        border: .1rem solid $white;
+      }
+    }
+  }
+  .navigation-checkbox:checked ~ .navigation-menu {
+    background-color: rgba($dark-grey, .8);
+    width: 100%;
+    height: 100vh;
+    .navigation-item {
+      right: 0;
+    }
+    @for $i from 1 through 5 {
+      .navigation-item-#{$i} {
+        transition: .2s * $i;
+      }
+    }
+  }
+  .navigation-icon {
+    margin: 47% auto 0;
+    display: block;
+    width: 3rem;
+    border-top: 2px solid $black;
+    transition: .1s;
+    &::after,
+    &::before {
+      content: '';
+      display: block;
+      width: 3rem;
+      border-top: 2px solid $black;
+      margin: 0 auto;
+      transition: 1s;
+    }
+    &::after {
+      position: relative;
+      top: -1.2rem;
+    }
+    &::before {
+      position: relative;
+      top: .6rem;
+    }
+  }
+  .navigation-menu {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    font-size: 3.5rem;
+    transition: .5s;
+  }
+  .navigation-item {
+    position: relative;
+    right: -50vw;
+    max-width: 43rem;
+    width: 50%;
+    margin: 0 10% 0 40%;
+    padding: .8rem .8rem .8rem 0;
+    a {
+      color: $white;
+    }
+    &:not(:first-child) {
+      margin: .5rem 10% 0 40%;
+    }
+    &::after,
+    &::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      position: relative;
+      transition: .7s;
+    }
+    &::after {
+      top: .8rem;
+    }
+    &::before {
+      top: -.8rem;
+      margin: 0 0 0 100%;
+    }
+    &:hover::after {
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+    }
+    &:hover::before {
+      background-color: $white;
+      width: 100%;
+      height: 1px;
+      margin: 0;
+    }
+    @include breakpoint(450px) {
+      width: 75%;
+      &:first-child {
+        margin: .5rem auto;
+      }
+      &:not(:first-child) {
+        margin: .5rem auto;
+      }
+    }
+    @include breakpoint(phone-landscape) {
+      padding: .4rem .4rem .4rem 0;
+      width: 35%;
+      &::after {
+        top: .4rem;
+      }
+      &::before {
+        top: -.4rem;
+      }
+    }
+  }
+}

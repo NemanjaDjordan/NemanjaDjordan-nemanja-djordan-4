@@ -1,0 +1,66 @@
+.section-search-bar {
+  padding: 5rem 0;
+  position: relative;
+  @include shadow;
+  z-index: 100;
+  margin: -9rem auto 5rem;
+  background-color: $white;
+  .form {
+    width: 70%;
+    margin: 0 auto;
+    @include shadow;
+    @include breakpoint(phone) {
+      width: 95%;
+    }
+  }
+  .input {
+    width: 70%;
+    padding: 1.5rem 1.7rem;
+    margin: 0;
+    font-size: 1.3rem;
+    color: rgba(#abb3b8, .8);
+    border: 0;
+    &:focus {
+      color: $black;
+    }
+  }
+  .text {
+    width: 70%;
+    margin: 0 auto;
+    @include breakpoint(phone) {
+      flex-wrap: wrap;
+      width: 95%;
+    }
+  }
+  .small-text {
+    margin: 1.5rem 1rem 0 0;
+    @include breakpoint(phone) {
+      width: 25%;
+      margin: 1.5rem 1rem .7rem;
+      font-size: 1.2rem;
+    }
+  }
+  .small-text:nth-last-child(2) {
+    margin: 1.5rem 0 0;
+  }
+  .small-text:last-child {
+    margin: 1.5rem 0 0 auto;
+    @include breakpoint(phone) {
+      margin: 1.5rem 1rem .7rem;
+    }
+  }
+  .btn {
+    width: 29.8%;
+    border-radius: 0;
+    font-size: 1.3rem;
+    padding: 1.6rem;
+    border: 1px solid #297beb;
+    color: $white;
+    @include breakpoint(936px) {
+      width: 29.7%;
+    }
+    @include breakpoint(459px) {
+      width: 29.5%;
+    }
+  }
+}

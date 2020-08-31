@@ -1,0 +1,57 @@
+.section-about {
+  padding: 10rem 0;
+  background-color: $grey;
+  .wrapper {
+    flex-wrap: wrap;
+    @include breakpoint(phone) {
+      flex-wrap: wrap;
+    }
+  }
+  .big-text {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 5rem;
+  }
+  .item {
+    width: 40%;
+    @include shadow;
+    @include breakpoint(tablet) {
+      width: 100%;
+    }
+  }
+  .item:not(:last-child) {
+    margin: 0 10% 0 0;
+    @include breakpoint(tablet) {
+      margin: 0 0 3rem;
+    }
+  }
+  .picture {
+    min-width: 17rem;
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+    background-color: #267aea;
+    padding: 10rem 0;
+    @include breakpoint(460px) {
+      display: none;
+    }
+  }
+  .text {
+    width: 65%;
+    padding: 7rem 2rem;
+    line-height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    @include breakpoint(460px) {
+      width: 100%;
+      .medium-text {
+        text-align: left;
+        width: 100%;
+      }
+    }
+  }
+  .small-text {
+    margin: 0 0 5rem;
+  }
+}

@@ -1,0 +1,65 @@
+.section-why-us {
+  @include breakpoint(phone) {
+    flex-direction: column;
+  }
+  .big-text {
+    margin: 0 0 5rem;
+    @include breakpoint(phone) {
+      font-size: 3rem;
+    }
+  }
+  .left {
+    width: 50%;
+    color: $white;
+    @include shadow;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    .medium-text {
+      margin: 0 0 1rem;
+      display: inline-block;
+      line-height: 3rem;
+      font-weight: bold;
+      @include breakpoint(phone) {
+        font-size: 2.5rem;
+      }
+    }
+    .small-text {
+      margin: 0 0 4rem;
+      line-height: 2.5rem;
+      @include breakpoint(phone) {
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+  .left-text {
+    background-color: #297beb;
+    padding: 7%;
+    width: 80%;
+  }
+  .icons {
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    .img-wrap {
+      margin: 50% 0;
+      width: 50%;
+    }
+  }
+  .right {
+    width: 50%;
+    padding: 5%;
+    @include breakpoint(phone) {
+      width: 100%;
+      padding: 20% 0;
+    }
+    .small-text {
+      margin: 0 0 5rem;
+      line-height: 2.5rem;
+    }
+    .img-wrap {
+      width: 100%;
+    }
+  }
+}

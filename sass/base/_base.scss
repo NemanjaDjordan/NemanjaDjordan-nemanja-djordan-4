@@ -1,0 +1,33 @@
+body,
+html {
+  background-color: #fff;
+  font-size: 62.5%;
+  margin: 0;
+  font-family: sans-serif;
+  color: #abb3b8;
+}
+body {
+  @include breakpoint(phone) {
+    position: relative;
+    top: -5rem;
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+svg {
+  height: 100%;
+  width: 100%;
+  fill: #63a9ff;
+}
+.body-blur {
+  .main {
+    filter: blur(8px);
+    transition: .25s ease-in-out;
+  }
+}
+.no-scroll {
+  overflow: hidden;
+}

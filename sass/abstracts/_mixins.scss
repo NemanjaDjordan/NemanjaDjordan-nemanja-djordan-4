@@ -1,0 +1,28 @@
+@mixin breakpoint($point) {
+  @if $point == tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $point == phone {
+    @media (max-width: $breakpoint-phone) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $point) {
+      @content;
+    }
+  }
+}
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+@mixin shadow {
+  box-shadow: 0 .4rem 1rem .01rem rgba(#abb3b8, .8);
+}
+@mixin footer-margin {
+  margin: 0 0 2rem;
+}
